@@ -83,15 +83,24 @@ const PopularProducts: React.FC = () => {
                             </p>
                         </div>
 
-                        { storeInfo.id === loggedInUserId && (
+                        {storeInfo.id === loggedInUserId && (
                             <CustomizeFeatured />
                         )}
 
                     </div>
+                    {topProducts.length > 0 && (
 
-                    <div className="mt-16 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14">
-                        {content}
-                    </div>
+                        <div className="mt-16 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14">
+                            {content}
+                        </div>
+                    )
+                    }
+                    {topProducts.length === 0 && (
+                        <div className="mt-16 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14">
+                            <p>No products available</p>
+
+                        </div>
+                    )}
                 </section>
 
             </div>

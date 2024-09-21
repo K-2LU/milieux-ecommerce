@@ -33,7 +33,9 @@ const CarouselContainer = () => {
     return (
         <>
             <div className='flex justify-start items-start'>
-                <Image className='pt-5 object-contain' src={storeInfo.logo_url} alt='store logo' width={120} height={120} />
+                <Image className='pt-5 object-contain' 
+                        src={storeInfo.logo_url === null ? 'https://placehold.co/600x400/png': storeInfo.logo_url} 
+                        alt='store logo' width={120} height={120} />
             </div>
             <section id="home" className="w-full flex xl:flex-row flex-col justify-center max-h-full gap-10 max-container px-10">
                 <div className="flex-1 flex justify-center items-center rounded-3xl xl:min-h-full max-xl:py-40 bg-hero bg-cover bg-center" >
@@ -41,6 +43,7 @@ const CarouselContainer = () => {
                         <CarouselContent>
                             {ui_images.map((img: string, index: number) => (
                                 <CarouselItem key={index} className="flex justify-center items-center h-[600px]">
+
                                     <Image
                                         src={img}
                                         alt={`Carousel image ${index + 1}`}
