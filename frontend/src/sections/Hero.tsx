@@ -38,7 +38,7 @@ const Hero = () => {
         <>
             <section id="home" className="w-full flex xl:flex-row flex-col justify-center h-[800px] gap-10 max-container">
                 <div className="relative xl:w-2/5 flex flex-col justify-start items-start w-full max-xl:padding-x pt-28">
-                    <h1 className="mt-2 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold">
+                    <h1 className="mt-2 z-10 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold">
                         <span className="xl:bg-transparent xl:whitespace-nowrap relative z-10 pr-10">{banner}</span>
                         <br />
                         <span style={{ color: accentColor }} className="inline-block mt-3">{name}</span>

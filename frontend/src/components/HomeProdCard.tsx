@@ -1,9 +1,8 @@
+import Image from 'next/image';
 import React from 'react';
 
 interface CardProps {
-  imgURL: {
-    prodImage: string;
-  };
+  imgURL: string;
   changeImage: (url: string) => void;
   bigImage: string;
   accentColor: string;
@@ -17,8 +16,8 @@ const HomeProdCard: React.FC<CardProps> = ({ imgURL, changeImage, bigImage, acce
   
   
   const handleClick = () => {
-    if (bigImage !== imgURL.prodImage) {
-      changeImage(imgURL.prodImage);
+    if (bigImage !== imgURL) {
+      changeImage(imgURL);
     }
   };
 
@@ -28,7 +27,7 @@ const HomeProdCard: React.FC<CardProps> = ({ imgURL, changeImage, bigImage, acce
       onClick={handleClick}
     >
       <div className='flex justify-center items-center bg-card bg-center bg-cover sm:w-40 sm:h-40 rounded-xl max-sm:p-4'>
-        <img 
+        <Image
           src={imgURL} 
           alt="product collection" 
           width={127} 

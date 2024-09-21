@@ -10,3 +10,7 @@
 -- DROP COLUMN category
 
 -- UPDATE store SET ui_type = 0 WHERE id = 5;
+
+-- DROP TABLE review;
+
+SELECT * FROM review

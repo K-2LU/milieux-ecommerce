@@ -39,6 +39,7 @@ public class ReviewController {
 
     @PostMapping("/create")
     void create(@RequestBody Review review) {
+        // System.out.println(review);
         repository.create(review);
     }
 

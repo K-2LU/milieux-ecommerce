@@ -42,14 +42,14 @@ const CarouselContainer = () => {
                     <Carousel>
                         <CarouselContent>
                             {ui_images.map((img: string, index: number) => (
-                                <CarouselItem key={index} className="flex justify-center items-center h-[600px]">
+                                <CarouselItem key={index} className="flex justify-center items-center h-[600px] w-full">
 
                                     <Image
                                         src={img}
                                         alt={`Carousel image ${index + 1}`}
-                                        width={500}
-                                        height={500}
-                                        className="w-fit m-10"
+                                        width={1500}
+                                        height={1200}
+                                        className="object-contain max-w-full max-h-full"
                                     />
                                 </CarouselItem>
                             ))}

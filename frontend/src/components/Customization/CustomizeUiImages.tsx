@@ -61,7 +61,11 @@ const CustomizeUiImages = () => {
 
             // If a file is selected, upload it to Cloudinary
             const fileReader = new FileReader();
-            fileReader.readAsDataURL(selectedFile);
+            if (selectedFile) {
+                fileReader.readAsDataURL(selectedFile);
+            } else {
+                throw new Error("No file selected");
+            }
 
             fileReader.onload = async () => {
                 const fileBase64 = fileReader.result as string;
@@ -134,7 +138,7 @@ const CustomizeUiImages = () => {
                 }
                 <div className='flex justify-center items-center gap-2'>
                     <Input className='w-[30%] border-[1.5px] border-gray-200 focus:border-none' placeholder='Upload more images' type='file' onChange={handleFileChange} />
-                    <Button onClick={handleHeroUpdate} className='w-[10%] h-fit bg-black text-white hover:bg-gray-800 hover:text-white' variant={'ghost'}>
+                    <Button onClick={handleHeroUpdate} className='w-fit h-fit bg-black text-white hover:bg-gray-800 hover:text-white' variant={'ghost'}>
                         Submit
                     </Button>
                 </div>

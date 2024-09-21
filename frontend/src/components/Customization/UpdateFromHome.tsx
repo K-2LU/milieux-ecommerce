@@ -27,7 +27,6 @@ const UpdateFromHome = () => {
                             <div className='flex flex-col gap-2 justify-center items-center w-full'>
                                 <CustomizeUiType />
                                 <CustomizeUiImages />
-
                             </div>
 
                             <DrawerFooter>
