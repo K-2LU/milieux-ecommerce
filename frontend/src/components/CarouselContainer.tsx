@@ -20,7 +20,7 @@ const CarouselContainer = () => {
     }
 
     useEffect(() => {
-        if (storeInfo.ui_images) {
+        if (storeInfo.ui_images !== null) {
             setUi_images(storeInfo.ui_images);
         }
     }, [storeInfo.ui_images]);

@@ -16,7 +16,7 @@ const StoreContext = createContext<StoreContextType | undefined>(undefined);
 export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   const loggedUserInfo = {
-      "id": 1,
+      "id": 5,
       "isBusiness": true,
       "name": "Sadik Al Barid",
       "email": "sdas@asdas.ccc",

@@ -73,8 +73,6 @@ export function GradientPicker({
   ]
 
   const defaultTab = useMemo(() => {
-    if (background.includes('url')) return 'image'
-    if (background.includes('gradient')) return 'gradient'
     return 'solid'
   }, [background])
 

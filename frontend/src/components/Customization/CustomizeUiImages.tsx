@@ -18,6 +18,7 @@ const CustomizeUiImages = () => {
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
     const updateUiImages = async (updatedImages: string[]) => {
+        
         try {
             const response = await fetch(`${PORT}/store/update/ui-images/${storeInfo.id}`, {
                 method: 'POST',
@@ -75,7 +76,17 @@ const CustomizeUiImages = () => {
                 }
 
                 // After successful image upload, update the store's ui_images
-                await updateUiImages([...storeInfo.ui_images, uploadedImageUrl]);
+                // await updateUiImages([...storeInfo.ui_images, uploadedImageUrl]);
+                if (storeInfo.ui_images) {
+                    await updateUiImages([...storeInfo.ui_images, uploadedImageUrl]);
+                }
+                else {
+                    if (uploadedImageUrl) {
+                        await updateUiImages([uploadedImageUrl]);
+                    } else {
+                        throw new Error("Uploaded image URL is null");
+                    }
+                }
             };
         } catch (error: any) {
             console.error('Error updating store UI:', error);
